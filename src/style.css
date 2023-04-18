@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: Nunito;
+  src: url('/Nunito-VariableFont_wght.ttf');
+}
+
+
+@font-face {
+  font-family: Nunito;
+  font-style: italic;
+  src: url('/Nunito-Italic-VariableFont_wght.ttf');
+}
+
+*,
+*::after,
+*::before {
+  font-family: Nunito;
+}
