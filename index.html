@@ -9,58 +9,70 @@
   </head>
   <body class="min-h-screen subpixel-antialiased">
     <header class="bg-indigo-600 border-b-green-900 shadow-md px-2 sm:px-4 py-2 flex justify-between items-center">
-      <button class="sm:hidden text-white" id="openSidebarButton">
+      <button class="lg:hidden text-white" id="openSidebarButton">
         <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </button>
-      <div class="bg-white p-1 rounded-full flex items-center space-x-2 pr-3">
-        <img class="w-8 h-8 sm:w-10 sm:h-10 aspect-square" src="/pokeball.png" alt="Pokéball image">
-        <h1 class="text-lg sm:text-2xl font-bold">Pokédex</h1>
+      <div class="flex items-center space-x-12">
+        <div class="bg-white p-1 rounded-full flex items-center space-x-2 pr-3">
+          <img class="w-8 h-8 sm:w-10 sm:h-10 aspect-square" src="/pokeball.png" alt="Pokéball image">
+          <h1 class="text-lg sm:text-2xl font-bold">Pokédex</h1>
+        </div>
+        <nav class="hidden lg:flex space-x-4 items-center justify-evenly">
+          <a class="bg-white text-indigo-800 font-bold px-3 py-2 rounded-xl cursor-default shadow-sm" href="#">
+            Pokémon
+          </a>
+          <a class="text-white font-bold px-3 py-2 rounded-xl hover:bg-indigo-800 transition-colors" href="#">
+            Moves
+          </a>
+          <a class="text-white font-bold px-3 py-2 rounded-xl hover:bg-indigo-800 transition-colors" href="#">
+            Items
+          </a>
+        </nav>
       </div>
-      <nav class="hidden sm:flex space-x-5 items-center justify-evenly">
-        <a class="bg-white text-indigo-900 font-bold px-3 pb-1 pt-2 rounded-xl cursor-default shadow-sm" href="#">
-          Pokemon
-        </a>
-        <a class="text-white font-bold px-3 pb-1 pt-2 rounded-xl hover:bg-indigo-800 transition-colors" href="#">
-          Moves
-        </a>
-        <a class="text-white font-bold px-3 pb-1 pt-2 rounded-xl hover:bg-indigo-800 transition-colors" href="#">
-          Items
-        </a>
-      </nav>
-      <button class="bg-purple-400 hover:bg-purple-500 px-2 sm:pr-4 py-2 rounded-xl text-white font-bold shadow-md transition-colors flex items-center gap-1">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-        </svg>
-        <span class="hidden sm:inline">
-          About
-        </span>
-      </button>
-    </header>
-    <div class="hidden sm:hidden bg-slate-900 opacity-0 bg-opacity-50 w-screen h-screen absolute top-0 left-0 transition-all" id="sidebarOverlay">
-      <aside class="bg-indigo-400 w-10/12 max-w-xs h-full pt-4 px-4 -translate-x-full transition-all">
-        <form class="mb-5 w-full flex">
-          <button class="bg-gray-300 rounded-2xl w-10 grid place-items-center shadow-md mr-2 shrink-0" id="closeSidebarButton">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 pointer-events-none">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>            
-          </button>
-          <input class="bg-gray-100 rounded-l-2xl h-10 px-5 w-full shadow-lg" type="text" placeholder="Buscar...">
+      <div class="flex items-center space-x-5">
+        <form class="hidden max-w-xs lg:flex">
+          <input class="bg-gray-100 rounded-l-2xl h-10 px-5 w-full shadow-lg outline-none" type="text" placeholder="Search...">
           <button class="bg-black text-white rounded-r-2xl w-12 grid place-items-center shadow-lg shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
             </svg>            
           </button>
         </form>
-        <nav class="flex flex-col bg-purple-400 space-y-8 items-center py-5 px-5 rounded-lg shadow-lg">
-          <a class="bg-white text-purple-900 font-bold text-xl w-full text-center block py-4 rounded-2xl cursor-default shadow-md" href="#">
+        <button class="bg-purple-400 hover:bg-purple-500 px-2 sm:pr-4 py-2 rounded-xl text-white font-bold shadow-md transition-colors flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+          </svg>
+          <span class="hidden sm:inline">
+            About
+          </span>
+        </button>
+      </div>
+    </header>
+    <div class="hidden lg:hidden bg-slate-900 opacity-0 bg-opacity-50 w-screen h-screen absolute top-0 left-0 transition-all" id="sidebarOverlay">
+      <aside class="bg-indigo-400 w-10/12 max-w-xs h-full pt-4 px-4 -translate-x-full transition-all">
+        <form class="mb-5 w-full flex">
+          <button class="bg-gray-300 rounded-2xl w-10 grid place-items-center shadow-md mr-2 shrink-0" type="button" id="closeSidebarButton">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 pointer-events-none">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>            
+          </button>
+          <input class="bg-gray-100 rounded-l-2xl h-10 px-5 w-full shadow-lg outline-none" type="text" placeholder="Search...">
+          <button class="bg-black text-white rounded-r-2xl w-12 grid place-items-center shadow-lg shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>            
+          </button>
+        </form>
+        <nav class="flex flex-col bg-indigo-600 space-y-8 items-center py-5 px-5 rounded-lg shadow-lg">
+          <a class="bg-white text-indigo-800 font-bold text-xl w-full text-center block py-4 rounded-2xl cursor-default shadow-md" href="#">
             Pokemon
           </a>
-          <a class="bg-purple-800 text-white font-bold text-xl w-full text-center block py-4 rounded-2xl cursor-default shadow-md" href="#moves">
+          <a class="bg-indigo-800 text-white font-bold text-xl w-full text-center block py-4 rounded-2xl shadow-md" href="#moves">
             Moves
           </a>
-          <a class="bg-purple-800 text-white font-bold text-xl w-full text-center block py-4 rounded-2xl cursor-default shadow-md" href="#items">
+          <a class="bg-indigo-800 text-white font-bold text-xl w-full text-center block py-4 rounded-2xl shadow-md" href="#items">
             Items
           </a>
         </nav>
