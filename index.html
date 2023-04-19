@@ -9,7 +9,7 @@
   </head>
   <body class="min-h-screen subpixel-antialiased">
     <header class="bg-indigo-600 border-b-green-900 shadow-md px-2 sm:px-4 py-2 flex justify-between items-center">
-      <button class="sm:hidden text-white">
+      <button class="sm:hidden text-white" id="openSidebarButton">
         <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
@@ -38,5 +38,33 @@
         </span>
       </button>
     </header>
+    <div class="hidden sm:hidden bg-slate-900 opacity-0 bg-opacity-50 w-screen h-screen absolute top-0 left-0 transition-all" id="sidebarOverlay">
+      <aside class="bg-indigo-400 w-10/12 max-w-xs h-full pt-4 px-4 -translate-x-full transition-all">
+        <form class="mb-5 w-full flex">
+          <button class="bg-gray-300 rounded-2xl w-10 grid place-items-center shadow-md mr-2 shrink-0" id="closeSidebarButton">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 pointer-events-none">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>            
+          </button>
+          <input class="bg-gray-100 rounded-l-2xl h-10 px-5 w-full shadow-lg" type="text" placeholder="Buscar...">
+          <button class="bg-black text-white rounded-r-2xl w-12 grid place-items-center shadow-lg shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>            
+          </button>
+        </form>
+        <nav class="flex flex-col bg-purple-400 space-y-8 items-center py-5 px-5 rounded-lg shadow-lg">
+          <a class="bg-white text-purple-900 font-bold text-xl w-full text-center block py-4 rounded-2xl cursor-default shadow-md" href="#">
+            Pokemon
+          </a>
+          <a class="bg-purple-800 text-white font-bold text-xl w-full text-center block py-4 rounded-2xl cursor-default shadow-md" href="#moves">
+            Moves
+          </a>
+          <a class="bg-purple-800 text-white font-bold text-xl w-full text-center block py-4 rounded-2xl cursor-default shadow-md" href="#items">
+            Items
+          </a>
+        </nav>
+      </aside>
+    </div>
   </body>
 </html>
