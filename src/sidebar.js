@@ -10,7 +10,7 @@ function openSidebar() {
   overlay.style.setProperty('opacity', '1')
 
   setTimeout(() => {
-    sidebar.style.setProperty('translate', '100%')
+    sidebar.style.setProperty('transform', 'translate(0px)')
   }, 200)
 
   isOpen = true
@@ -22,7 +22,7 @@ function openSidebar() {
 function closeSidebar(event) {
   if (event.target !== overlay && event.target !== closeButton) return
   
-  sidebar.style.removeProperty('translate')
+  sidebar.style.removeProperty('transform')
 
   setTimeout(() => {
     overlay.style.removeProperty('opacity')
