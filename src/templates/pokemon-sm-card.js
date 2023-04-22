@@ -1,7 +1,7 @@
-export const pokemonSmallCard = (id) => `<a href="#pokemon-${id}">
+export const pokemonSmallCard = (id, image) => `<a href="#pokemon-${id}">
   <div class="flex max-w-xs lg:max-w-md mx-auto bg-green-500 rounded-xl shadow-md relative">
     <div class="bg-white bg-opacity-50 p-4">
-      <img class="w-16 h-16" src="/pokeball.png" alt="Pokémon Image">
+      <img class="w-16 h-16" src="${image}" alt="Pokémon Image">
     </div>    
     <div class="pl-4 py-2 grow flex flex-col justify-between items-start">
       <div>
