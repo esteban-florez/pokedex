@@ -1,5 +1,6 @@
 import { defineConfig } from "vite"
 
 export default defineConfig({
-  base: '/pokedex/'
+  base: '/pokedex/',
+  build: { target: 'esnext' }
 })
