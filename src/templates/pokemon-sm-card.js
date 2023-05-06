@@ -1,5 +1,5 @@
 import capitalizeWord from '../utils/capitalizeWord.js'
-import colorsByType from './colorsByType.js'
+import COLORS_BY_TYPE from './colorsByType.js'
 
 function formatTypes(types) {
   let result = capitalizeWord(types[0].type.name)
@@ -9,12 +9,13 @@ function formatTypes(types) {
     : `${result}/${capitalizeWord(types[1].type.name)}`
 }
 
-export default function pokemonSmallCard({ id, sprites, name, types }) {
+export default function pokemonSmallCard(pokemon) {
+  const { id, sprites, name, types } = pokemon
   const image = sprites.other['official-artwork'].front_default
-  const { bgColor, typesColor, genColor } = colorsByType(types[0].type.name)
+  const { bgColor, typesColor, genColor } = COLORS_BY_TYPE[types[0].type.name]
 
   return `<a href="#pokemon-${id}">
-    <div class="${bgColor} flex max-w-xs lg:max-w-md mx-auto rounded-xl shadow-md relative">
+    <div class="${bgColor} flex max-w-xs lg:max-w-md mx-auto rounded-xl shadow-lg relative">
       <div class="bg-white bg-opacity-50 p-2">
         <img class="w-20 h-20 p-1 bg-white rounded-full shadow-md" src="${image}" alt="Pokémon Image">
       </div>    

@@ -1,4 +1,4 @@
-export const COLORS = {
+export const COLORS_BY_TYPE = {
   normal: {
     bgColor: 'bg-zinc-400',
     typesColor: 'text-zinc-200',
@@ -91,6 +91,4 @@ export const COLORS = {
   },
 }
 
-export default function colorsByType(type) {
-  return COLORS[type]
-}
+export default COLORS_BY_TYPE

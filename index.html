@@ -79,9 +79,25 @@
       </aside>
     </div>
     <main class="bg-white max-w-sm sm:w-auto sm:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto p-4 shadow">
-      <div class="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="pokemonGalery">
-        
+      <div class="grid place-items-center" id="loading">
+        <div class="flex flex-col items-center py-20">
+          <img class="w-32 animate-spin" src="/pokeball-flat.png" alt="A pokeball image">
+          <p class="text-4xl mt-3 font-bold">Loading...</p>
+        </div>
       </div>
+      <section id="pokemonGalery" style="display: none;">
+        <div class="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-3 pt-3" id="pokemonGrid">
+          
+        </div>
+        <div class="flex w-100 mt-8 justify-center items-center gap-2">
+          <button class="bg-indigo-600 hover:bg-indigo-500 w-40 py-2 rounded-xl text-white font-bold shadow-md transition-colors text-xl disabled:brightness-75 disabled:pointer-events-none" disabled id="previous">
+            &lt;&lt; Previous
+          </button>
+          <button class="bg-indigo-600 hover:bg-indigo-500 w-40 py-2 rounded-xl text-white font-bold shadow-md transition-colors text-xl disabled:brightness-75  disabled:pointer-events-none" id="next">
+            Next &gt;&gt;
+          </button>
+        </div>
+      </section>
     </main>
   </body>
 </html>
