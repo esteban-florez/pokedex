@@ -1,3 +1,3 @@
 # Pokédex
 
-A small single-page application that shows info about Pokémon.
+Single-page application creada con JavaScript, que muestra información acerca de los Pókemon.
